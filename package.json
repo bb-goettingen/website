@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "BB-Goettingen Website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "bb-goettingen",
   "dependencies": {
     "gatsby": "^2.9.4",
     "gatsby-image": "^2.1.4",
@@ -21,10 +20,6 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -32,12 +27,5 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
