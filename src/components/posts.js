@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "./posts.scss"
 
 const PostShort = ({ node }) => {
-  const { excerpt, frontmatter: fm } = node;
+  const { excerpt, frontmatter } = node;
   // /\n+(?!#)/g : match new lines unless followed by a heading (#)
   const excerptLines = excerpt.trim()
                               .replace(/\n+(?!#)/g, "\n")
@@ -12,17 +12,25 @@ const PostShort = ({ node }) => {
                               .map(line => <>{line}<br /></>);
   return (
     <section className="post-short">
-      <Link to={fm.path}>
-        <h2 className="post-short-heading">{fm.title}</h2>
+      <Link to={frontmatter.path}>
+        <h2 className="post-short-heading">{frontmatter.title}</h2>
       </Link>
       <p className="post-short-excerpt">{excerptLines}</p>
       <span className="post-short-meta">
-        Posted on {fm.date} by {fm.author}
-        {fm.bg && fm.bg !== "" ? " (" + fm.bg + ")" : ""}
+        {meta(frontmatter)}
       </span>
     </section>
   );
 };
+
+export function meta(fm) {
+  return (
+    <>
+      Posted on {fm.date} by {fm.author}
+      {fm.bg && fm.bg !== "" ? " (" + fm.bg + ")" : ""}
+    </>
+  );
+}
 
 const PostList = ({ edges }) => {
   const posts = edges.filter(edge => !edge.node.frontmatter.draft)
