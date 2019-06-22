@@ -28,7 +28,7 @@ export const postQueryAll = graphql`
           frontmatter {
             path
             author
-            bg
+            authorExtra
             title
             date(formatString: "DD.MM.YYYY")
             draft

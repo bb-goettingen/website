@@ -1,7 +1,7 @@
 ---
-path: "/posts/example2"
+path: "/posts/example2-test"
 author: "Emily"
-bg: "BG-Informatik"
+authorExtra: "BG-Informatik"
 title: "Example 2"
 date: "2019-06-22"
 draft: false

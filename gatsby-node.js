@@ -19,7 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               path
               author
-              bg
+              authorExtra
               title
               date(formatString: "DD.MM.YYYY")
               draft

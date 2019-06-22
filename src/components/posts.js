@@ -27,7 +27,7 @@ export function meta(fm) {
   return (
     <>
       Posted on {fm.date} by {fm.author}
-      {fm.bg && fm.bg !== "" ? " (" + fm.bg + ")" : ""}
+      {fm.authorExtra && fm.authorExtra !== "" ? " (" + fm.authorExtra + ")" : ""}
     </>
   );
 }
