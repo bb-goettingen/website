@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo"
 import { meta } from "../components/posts.js"
 
+import "./postTemplate.scss"
+
 export default function Template({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
@@ -12,11 +14,11 @@ export default function Template({ data }) {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <h1>
+      <h1 className="post-heading">
         {frontmatter.title}
       </h1>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-      <span>{meta(frontmatter)}</span>
+      <div className="post-content" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <span className="post-meta">{meta(frontmatter)}</span>
     </Layout>
   );
 };
