@@ -19,6 +19,16 @@
   line-height: 1.2;
 }
 
+.post-short:hover .post-short-heading {
+  color: lighten($base-color, 10%);
+}
+.post-short:hover .post-short-excerpt {
+  color: lighten($text-color, 50%);
+}
+.post-short:hover .post-short-meta {
+  color: lighten($text-color, 70%);
+}
+
 .post-short-heading {
   color: $base-color;
   font-size: $font-size-normal;

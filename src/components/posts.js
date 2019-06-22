@@ -11,15 +11,15 @@ const PostShort = ({ node }) => {
                               .split("\n")
                               .map(line => <>{line}<br /></>);
   return (
-    <section className="post-short">
-      <Link to={frontmatter.path}>
+    <Link to={frontmatter.path}>
+      <section className="post-short">
         <h2 className="post-short-heading">{frontmatter.title}</h2>
-      </Link>
-      <p className="post-short-excerpt">{excerptLines}</p>
-      <span className="post-short-meta">
-        {meta(frontmatter)}
-      </span>
-    </section>
+        <p className="post-short-excerpt">{excerptLines}</p>
+        <span className="post-short-meta">
+          {meta(frontmatter)}
+        </span>
+      </section>
+    </Link>
   );
 };
 
