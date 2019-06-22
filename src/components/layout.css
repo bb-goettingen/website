@@ -620,3 +620,8 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
