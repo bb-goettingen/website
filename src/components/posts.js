@@ -25,11 +25,13 @@ const PostShort = ({ node }) => {
 };
 
 const PostList = ({ edges }) => {
-  const Posts = edges.filter(edge => !edge.node.frontmatter.draft)
+  const posts = edges.filter(edge => !edge.node.frontmatter.draft)
                      .map(edge => <PostShort node={edge.node}/>)
   return (
+    // Insert hr between elements
     <div className="posts-container">
-      {Posts}
+      {[...posts].map((e, i) => i < posts.length-1 ? [e, <hr className="posts-hr" />] : [e])
+                 .reduce((a, b) => a.concat(b))}
     </div>
   );
 };
