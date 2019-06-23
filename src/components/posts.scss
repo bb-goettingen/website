@@ -4,45 +4,35 @@
   display: flex;
   flex-direction: column;
 
+  padding: 40px 0;
+
   width: 100%;
   height: 100%;
 }
 
 .posts-hr {
-  margin: 10px;
+  margin: 20px 0;
   background-color: darken($background, 20%);
 }
 
 .post-short {
-  padding: 10px 20px;
-  margin: 5px;
   line-height: 1.2;
 }
 
 .post-short:hover .post-short-heading {
-  color: lighten($base-color, 10%);
-}
-.post-short:hover .post-short-excerpt {
-  color: lighten($text-color, 50%);
-}
-.post-short:hover .post-short-meta {
-  color: lighten($text-color, 70%);
+  text-decoration: underline;
 }
 
 .post-short-heading {
   @include heading;
-
-  color: $base-color;
   margin-bottom: 20px;
 }
 
 .post-short-excerpt {
   @include text;
-
   font-size: $font-size-small;
-
-  padding-left: 20px;
   margin-bottom: 20px;
+  color: lighten($text-color, 20%);
 }
 
 .post-short-meta {
