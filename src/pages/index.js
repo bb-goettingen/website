@@ -9,7 +9,7 @@ import PostList from "../components/posts.js"
 
 const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="" />
     <section>
       Das Basisdemokratische Bündnis ist eine Gruppe, in der sich
       Einzelpersonen und diverse Basisgruppen und Fachgruppen zusammengefunden
