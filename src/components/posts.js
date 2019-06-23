@@ -16,14 +16,14 @@ const PostShort = ({ node }) => {
         <h2 className="post-short-heading">{frontmatter.title}</h2>
         <p className="post-short-excerpt">{excerptLines}</p>
         <span className="post-short-meta">
-          {meta(frontmatter)}
+          {generateMetaString(frontmatter)}
         </span>
       </section>
     </Link>
   );
 };
 
-export function meta(fm) {
+export function generateMetaString(fm) {
   return (
     <>
       Posted on {fm.date} by {fm.author}
