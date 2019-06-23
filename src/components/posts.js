@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import DotDivider from "./uiElements.js"
+
 import "./posts.scss"
 
 const PostShort = ({ node }) => {
@@ -26,7 +28,7 @@ const PostShort = ({ node }) => {
 export function generateMetaString(fm) {
   return (
     <>
-      Posted on {fm.date} by {fm.author}
+      {fm.date} <DotDivider /> {fm.author}
       {fm.authorExtra && fm.authorExtra !== "" ? " (" + fm.authorExtra + ")" : ""}
     </>
   );
