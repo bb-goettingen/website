@@ -16,7 +16,13 @@
 }
 
 .post-short {
+  display: flex;
+  align-items: stretch;
   line-height: 1.2;
+}
+
+.post-short-content {
+  flex: 1;
 }
 
 .post-short:hover .post-short-heading {
@@ -37,4 +43,10 @@
 
 .post-short-meta {
   @include meta;
+}
+
+.post-short-image {
+  @include divImage;
+  margin-left: 40px;
+  width: 200px;
 }

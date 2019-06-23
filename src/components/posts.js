@@ -12,14 +12,21 @@ const PostShort = ({ node }) => {
                               .replace(/\n+(?!#)/g, "\n")
                               .split("\n")
                               .map(line => <>{line}<br /></>);
+  let image;
+  if(frontmatter.image && frontmatter.image !== "") {
+    image = <div className="post-short-image" style={{ backgroundImage: `url(${frontmatter.image})` }} />;
+  }
   return (
     <Link to={frontmatter.path}>
       <section className="post-short">
-        <h2 className="post-short-heading">{frontmatter.title}</h2>
-        <p className="post-short-excerpt">{excerptLines}</p>
-        <span className="post-short-meta">
-          {generateMetaString(frontmatter)}
-        </span>
+        <div className="post-short-content">
+          <h2 className="post-short-heading">{frontmatter.title}</h2>
+          <p className="post-short-excerpt">{excerptLines}</p>
+          <span className="post-short-meta">
+            {generateMetaString(frontmatter)}
+          </span>
+        </div>
+        {image}
       </section>
     </Link>
   );

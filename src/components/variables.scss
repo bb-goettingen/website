@@ -25,3 +25,9 @@ $font-family-text: Georgia, Times New Roman, Times, serif;
   font-size: $font-size-small;
   color: lighten($text-color, 50%);
 }
+
+@mixin divImage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

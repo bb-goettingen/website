@@ -1,8 +1,8 @@
 ---
-path: "/posts/example2-test"
+path: "/posts/example2"
 author: "Emily"
 authorExtra: "BG-Informatik"
-title: "Example 2"
+title: "Lorem ipsum dolor sit amet"
 date: "2019-06-22"
 draft: false
 ---

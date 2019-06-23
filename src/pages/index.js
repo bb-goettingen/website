@@ -33,6 +33,7 @@ export const postQueryAll = graphql`
             title
             date(formatString: "DD.MM.YYYY")
             draft
+            image
           }
         }
       }
