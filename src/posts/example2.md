@@ -3,6 +3,7 @@ path: "/posts/example2"
 author: "Emily"
 authorExtra: "BG-Informatik"
 title: "Lorem ipsum dolor sit amet"
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris enim neque, condimentum in imperdiet sit amet, interdum eget ligula. Etiam efficitur massa vitae elementum maximus. Vivamus ultricies odio non dui vulputate, eu condimentum lectus dapibus. Phasellus nec orci vel enim consectetur molestie ac et diam."
 date: "2019-06-22"
 draft: false
 ---
@@ -17,4 +18,4 @@ Nunc efficitur magna vitae augue cursus, eget porttitor eros feugiat. Cras lobor
 
 Mauris in sollicitudin leo. Nunc blandit justo erat, ut elementum est feugiat in. Sed ut auctor nibh, sit amet bibendum nisl. Integer posuere auctor consequat. Aenean et sodales ex. Donec ullamcorper pulvinar lectus sed congue. Suspendisse quis orci vehicula, semper turpis at, malesuada nibh. Fusce et elementum ante. Suspendisse libero neque, ultricies quis pharetra eget, venenatis non quam. Nunc elementum tristique elit ut euismod.
 
-Sed iaculis sagittis efficitur. Cras vel tortor eget orci sollicitudin fermentum at eget tortor. Aenean faucibus ex eu massa pharetra pellentesque. Nunc vel orci facilisis, luctus odio non, fringilla ligula. Donec accumsan consequat ultrices. Suspendisse urna arcu, ornare et vehicula vel, convallis sed risus. Sed ac hendrerit odio. Etiam dignissim ligula in nisi lacinia, in ullamcorper diam rhoncus. Maecenas faucibus neque id posuere maximus. Cras id vestibulum justo, tincidunt egestas nulla. Sed eros turpis, laoreet nec risus ac, consectetur aliquet magna. Integer euismod in quam a pretium. Pellentesque orci magna, feugiat at libero sit amet, aliquam luctus justo. Nam tincidunt leo non velit eleifend vehicula. Nulla vitae turpis non elit maximus consectetur et in nisi. Nunc elementum est ut est bibendum condimentum. 
+Sed iaculis sagittis efficitur. Cras vel tortor eget orci sollicitudin fermentum at eget tortor. Aenean faucibus ex eu massa pharetra pellentesque. Nunc vel orci facilisis, luctus odio non, fringilla ligula. Donec accumsan consequat ultrices. Suspendisse urna arcu, ornare et vehicula vel, convallis sed risus. Sed ac hendrerit odio. Etiam dignissim ligula in nisi lacinia, in ullamcorper diam rhoncus. Maecenas faucibus neque id posuere maximus. Cras id vestibulum justo, tincidunt egestas nulla. Sed eros turpis, laoreet nec risus ac, consectetur aliquet magna. Integer euismod in quam a pretium. Pellentesque orci magna, feugiat at libero sit amet, aliquam luctus justo. Nam tincidunt leo non velit eleifend vehicula. Nulla vitae turpis non elit maximus consectetur et in nisi. Nunc elementum est ut est bibendum condimentum.

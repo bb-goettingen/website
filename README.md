@@ -23,6 +23,8 @@ path        | The path to the post page, doesn't necessarily have to be the same
 author      | The author of the post
 authorExtra | Displayed in parenthesis after the author, could for example be an alias or a group the author belongs to
 title       | The title, used as the main heading of the post
+summary     | The summary of the post, displayed under the title
 date        | Post date, ISO 8601 date format: YYYY-MM-DD
 draft       | If true the post won't appear on the home page, but can still be accessed by going to `path`
+image       | The image displayed to the right of the post in the list
 
