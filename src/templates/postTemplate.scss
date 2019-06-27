@@ -3,6 +3,14 @@
 .post-heading {
   @include heading;
   font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.post-summary {
+  @include meta;
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 70px;
 }
 
 .post-content {

@@ -6,12 +6,7 @@ import DotDivider from "./uiElements.js"
 import "./posts.scss"
 
 const PostShort = ({ node }) => {
-  const { excerpt, frontmatter } = node;
-  // /\n+(?!#)/g : match new lines unless followed by a heading (#)
-  const excerptLines = excerpt.trim()
-                              .replace(/\n+(?!#)/g, "\n")
-                              .split("\n")
-                              .map(line => <>{line}<br /></>);
+  const { frontmatter } = node;
   let image;
   if(frontmatter.image && frontmatter.image !== "") {
     image = <div className="post-short-image" style={{ backgroundImage: `url(${frontmatter.image})` }} />;
@@ -21,7 +16,7 @@ const PostShort = ({ node }) => {
       <section className="post-short">
         <div className="post-short-content">
           <h2 className="post-short-heading">{frontmatter.title}</h2>
-          <p className="post-short-excerpt">{excerptLines}</p>
+          <p className="post-short-summary">{frontmatter.summary}</p>
           <span className="post-short-meta">
             {generateMetaString(frontmatter)}
           </span>

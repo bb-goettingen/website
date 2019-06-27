@@ -26,6 +26,7 @@ export default function Template({ data }) {
       <h1 className="post-heading">
         {frontmatter.title}
       </h1>
+      <span className="post-summary">{frontmatter.summary}</span>
       <div className="post-content" dangerouslySetInnerHTML={{ __html: html }}></div>
       <span className="post-meta">{generateMetaString(frontmatter)}</span>
     </Layout>
@@ -41,6 +42,7 @@ export const pageQuery = graphql`
         author
         authorExtra
         title
+        summary
         date(formatString: "DD.MM.YYYY")
         draft
       }

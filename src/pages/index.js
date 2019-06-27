@@ -25,12 +25,12 @@ export const postQueryAll = graphql`
     allMarkdownRemark(limit: 10, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
-          excerpt(format: MARKDOWN, pruneLength: 200)
           frontmatter {
             path
             author
             authorExtra
             title
+            summary
             date(formatString: "DD.MM.YYYY")
             draft
             image
