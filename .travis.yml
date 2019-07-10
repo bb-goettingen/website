@@ -9,10 +9,8 @@ jobs:
   include:
     - stage: test
       script: bash onlyPostsChanged.sh
-    - stage: build
-      script: npm ci && npm run build
     - stage: deploy
-      script: npm run deploy
+      script: npm ci && npm run build && npm run deploy
       deploy:
         provider: pages
         skip_cleanup: true
@@ -22,7 +20,5 @@ jobs:
 stages:
   - name: test
     if: branch NOT IN (master, develop) AND head_branch NOT IN (master, develop)
-  - name: build
-    if: branch = master
   - name: deploy
     if: branch = master
