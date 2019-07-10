@@ -10,7 +10,7 @@ before_script:
 jobs:
   include:
     - stage: test
-      script: onlyPostsChanged.sh
+      script: bash onlyPostsChanged.sh
     - stage: build
       script: "npm run build"
     - stage: deploy
