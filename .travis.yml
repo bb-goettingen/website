@@ -12,7 +12,7 @@ jobs:
     - stage: build
       script: npm ci && npm run build
     - stage: deploy
-      script: mkdir -p public
+      script: npm run deploy
       deploy:
         provider: pages
         skip_cleanup: true
