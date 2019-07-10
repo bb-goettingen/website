@@ -2,5 +2,11 @@
 
 .header {
   background-color: $base-background;
+  color: #f0f0f0;
+  height: 60px;
+  padding-left: 20px;
 }
 
+.header-heading {
+  line-height: 60px;
+}
