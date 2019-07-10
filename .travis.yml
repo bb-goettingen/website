@@ -23,7 +23,7 @@ jobs:
         keep_history: true
 stages:
   - name: test
-    if: head_branch NOT IN (master, develop)
+    if: branch NOT IN (master, develop) AND head_branch NOT IN (master, develop)
   - name: build
     if: branch = master
   - name: deploy
