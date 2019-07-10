@@ -9,16 +9,18 @@ jobs:
   include:
     - stage: test
       script: bash onlyPostsChanged.sh
-    - stage: deploy
-      script: npm ci && npm run build && npm run deploy
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: public
-        keep_history: true
+    - stage: build
+      script: npm ci && npm run build
 stages:
   - name: test
     if: branch NOT IN (master, develop) AND head_branch NOT IN (master, develop)
-  - name: deploy
+  - name: build
     if: branch = master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: public
+  keep_history: true
+  on:
+    branch: master
