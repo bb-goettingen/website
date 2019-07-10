@@ -1,25 +1,30 @@
 language: node_js
-branches:
-  only:
-    - master
 node_js:
   - "stable"
 cache:
   directories:
   - node_modules
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: public
-  keep_history: true
-  on:
-    branch: master
 before_script:
   - "npm i -g gatsby"
   - "npm i"
-script:
-  - "npm run test"
-after_success:
-  - "npm run deploy"
-
+jobs:
+  include:
+    - stage: test
+      script: onlyPostsChanged.sh
+    - stage: build
+      script: "npm run build"
+    - stage: deploy
+      script: echo "Deploying to GitHub pages ..."
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: public
+        keep_history: true
+stages:
+  - name: test
+    if: head_branch NOT IN (master, develop)
+  - name: build
+    if: branch = master
+  - name: deploy
+    if: branch = master
