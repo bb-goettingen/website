@@ -2,7 +2,7 @@
 CHANGED_FILES=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
 
 while read -r line; do
-  if case $line in src/posts/*) false;; *) true;; esac; then
+  if case $line in src/posts/*) false;; "") false;; *) true;; esac; then
     echo "Changed files:"
     printf "  %s\n" $CHANGED_FILES
     echo "A file outside of src/posts/ was modified - Test failed..."
