@@ -12,7 +12,9 @@ jobs:
     - stage: test
       script: bash onlyPostsChanged.sh
     - stage: build
-      script: "npm run build"
+      script: npm i -g gatsby
+    - script: npm i
+    - script: npm run build
     - stage: deploy
       script: echo "Deploying to GitHub pages ..."
       deploy:
