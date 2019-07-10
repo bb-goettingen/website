@@ -13,7 +13,7 @@ jobs:
       script: npm ci && npm run build
 stages:
   - name: test
-    if: branch NOT IN (master, develop) AND head_branch NOT IN (master, develop)
+    if: type = pull_request
   - name: build
     if: branch = master
 deploy:

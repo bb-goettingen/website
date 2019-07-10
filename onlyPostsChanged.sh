@@ -1,6 +1,8 @@
 #!/bin/sh
 CHANGED_FILES=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
 
+if [ "$TRAVIS_BRANCH" = "develop" ]; then exit 0; fi
+
 while read -r line; do
   if case $line in src/posts/*) false;; "") false;; *) true;; esac; then
     echo "Changed files:"
