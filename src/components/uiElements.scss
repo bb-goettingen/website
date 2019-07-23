@@ -1,3 +1,7 @@
 .ui-dot-divider:after {
   content: "·";
 }
+.ui-line-divider:after {
+  content: "|";
+  margin: 0 0.5em;
+}

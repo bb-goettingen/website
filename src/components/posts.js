@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import DotDivider from "./uiElements.js"
+import { DotDivider, LineDivider, PreviousPageButton, NextPageButton } from "./uiElements.js"
 
 import "./posts.scss"
 
@@ -36,9 +36,8 @@ export function generateMetaString(fm) {
   );
 }
 
-const PostList = ({ edges }) => {
-  const posts = edges.filter(edge => !edge.node.frontmatter.draft)
-                     .map(edge => <PostShort node={edge.node}/>)
+export const PostList = ({ edges }) => {
+  const posts = edges.map(edge => <PostShort node={edge.node}/>)
   return (
     // Insert hr between elements
     <div className="posts-container">
@@ -48,4 +47,28 @@ const PostList = ({ edges }) => {
   );
 };
 
-export default PostList;
+export const PostListNav = ({ first, last, currentPageNumber }) => {
+  let content = [];
+  if(!first) {
+    let href;
+    if(currentPageNumber === 2) {
+      href = "/";
+    } else {
+      href = "posts-" + (currentPageNumber - 1);
+    }
+    content.push(<PreviousPageButton href={href}/>);
+  }
+  if(!last) {
+    if(!first) {
+      content.push(<LineDivider />);
+    }
+    content.push(<NextPageButton href={"posts-" + (currentPageNumber + 1)}/>);
+  }
+
+  return (
+    <nav className="posts-navigation">
+      {content}
+    </nav>
+  );
+}
+
