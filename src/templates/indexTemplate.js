@@ -5,10 +5,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { PostList, PostListNav } from "../components/posts.js"
+import { PostList, PostListNav } from "../components/posts"
 
-const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => {
-  let postsPerPage = 10
+export default function Template({ pageContext, data: { allMarkdownRemark: { edges } } }) {
+  // If result length is longer than postsPerPage we'll need another page to
+  // list posts, and therefore a PostListNav on the first page
+  const navRequired = edges.length > pageContext.limit;
+  // Because we queried with limit: postsPerPage+1, drop the last element
+  if(navRequired) edges.pop();
   return (
     <Layout>
       <SEO title="" />
@@ -19,7 +23,7 @@ const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => {
         bringen.
       </section>
       <PostList edges={edges} />
-      {edges.length > postsPerPage &&
+      {navRequired &&
         <PostListNav first={true} last={false}
                      currentPageNumber={1} />
       }
@@ -28,10 +32,10 @@ const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => {
 };
 
 // limit should be postsPerPage+1 to check if PostListNav is needed
-export const postQueryAll = graphql`
-  query {
+export const pageQuery = graphql`
+  query($limit: Int!) {
     allMarkdownRemark(
-        limit: 11, sort: {fields: frontmatter___date, order: DESC}
+        limit: $limit, sort: {fields: frontmatter___date, order: DESC}
         filter: {frontmatter: {draft: {eq: false}}}
     ) {
       edges {
@@ -51,5 +55,3 @@ export const postQueryAll = graphql`
     }
   }
 `;
-
-export default IndexPage;

@@ -6,13 +6,16 @@
 
 const path = require("path");
 
+const { siteMetadata } = require("./gatsby-config.js");
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve("src/templates/postTemplate.js");
-  const postListTemplate = path.resolve("src/templates/postListTemplate.js");
+  const postTemplate = path.resolve("./src/templates/postTemplate.js");
+  const postListTemplate = path.resolve("./src/templates/postListTemplate.js");
+  const indexTemplate = path.resolve("./src/templates/indexTemplate.js");
 
   return graphql(`
-    {
+    query {
       allMarkdownRemark(
           sort: {fields: frontmatter___date, order: DESC}
           filter: {frontmatter: {draft: {eq: false}}}
@@ -31,13 +34,23 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
+    createPage({
+      path: "/",
+      component: indexTemplate,
+      context: {
+        // postsPerPage+1 to check if PostListNav is needed
+        limit: siteMetadata.postsPerPage + 1
+      }
+    });
+
     return result.data.allMarkdownRemark.edges.forEach(({ node }, index, array) => {
       createPage({
         path: node.frontmatter.path,
         component: postTemplate,
         context: {}
       });
-      const postsPerPage = 10;
+
+      const { postsPerPage } = siteMetadata;
       // The first page is the index page so skip it here
       if((index % postsPerPage) === 0 && index >= postsPerPage) {
         let currentPageIndex = index/postsPerPage;

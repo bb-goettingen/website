@@ -3,7 +3,8 @@ module.exports = {
   siteMetadata: {
     title: `BB-Göttingen`,
     description: `Basisgruppen Göttingen`,
-    author: `bb-goettingen`
+    author: `bb-goettingen`,
+    postsPerPage: 10
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

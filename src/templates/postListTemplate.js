@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo"
-import { PostList, PostListNav } from "../components/posts.js"
+import SEO from "../components/seo";
+import { PostList, PostListNav } from "../components/posts";
 
 export default function Template({ pageContext, data: { allMarkdownRemark: { edges } } }) {
   return (
@@ -18,8 +18,8 @@ export default function Template({ pageContext, data: { allMarkdownRemark: { edg
   );
 };
 
-export const postQueryAll = graphql`
-  query postQueryAll($skip: Int!, $limit: Int!) {
+export const pageQuery = graphql`
+  query($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
         sort: {fields: frontmatter___date, order: DESC}
         filter: {frontmatter: {draft: {eq: false}}}
