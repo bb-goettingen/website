@@ -23,12 +23,14 @@ export default function Template({ data }) {
         {meta}
       </Helmet>
       <SEO title={frontmatter.title} />
-      <h1 className="post-heading">
-        {frontmatter.title}
-      </h1>
-      <span className="post-summary">{frontmatter.summary}</span>
-      <div className="post-content" dangerouslySetInnerHTML={{ __html: html }}></div>
-      <span className="post-meta">{generateMetaString(frontmatter)}</span>
+      <div className="post-container">
+        <h1 className="post-heading">
+          {frontmatter.title}
+        </h1>
+        <span className="post-summary">{frontmatter.summary}</span>
+        <div className="post-content" dangerouslySetInnerHTML={{ __html: html }}></div>
+        <span className="post-meta">{generateMetaString(frontmatter)}</span>
+      </div>
     </Layout>
   );
 };

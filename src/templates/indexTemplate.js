@@ -16,7 +16,7 @@ export default function Template({ pageContext, data: { allMarkdownRemark: { edg
   return (
     <Layout>
       <SEO title="" />
-      <section>
+      <section className="section-description">
         Das Basisdemokratische Bündnis ist eine Gruppe, in der sich
         Einzelpersonen und diverse Basisgruppen und Fachgruppen zusammengefunden
         haben, um gemeinsam emanzipatorische Politik an der Uni voran zu

@@ -3,7 +3,7 @@
 .header {
   position: relative;
   color: #f0f0f0;
-  height: 160px;
+  height: $header-height;
   overflow: hidden;
 }
 .header:before {
@@ -25,6 +25,7 @@
 }
 
 .header-heading {
-  line-height: 80px;
+  line-height: $header-height;
+  padding: 0 $general-padding;
   text-shadow: 0 0 3px #000000;
 }

@@ -11,7 +11,11 @@ $font-size-small: 0.8rem;
 $font-family-heading: Arial, sans-serif;
 $font-family-text: Georgia, Times New Roman, Times, serif;
 
+$header-height: 160px;
+
 $main-max-width: 800px;
+
+$general-padding: 10px;
 
 @mixin text {
   font-family: $font-family-text;

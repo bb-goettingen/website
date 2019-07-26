@@ -1,5 +1,9 @@
 @import '../components/variables';
 
+.post-container {
+  padding: $general-padding;
+}
+
 .post-heading {
   @include heading;
   font-size: 3rem;
