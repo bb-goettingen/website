@@ -13,9 +13,10 @@ If you want to create an issue or make a suggestion you can use the
 * Git
 * JavaScript (ECMAScript 2015)
 * HTML/XML/JSX
-* CSS and Sass, only necessary if you want to make changes to the style
+* CSS and Sass
 * React
 * Gatsby
+* GraphQL
 
 ## Branches
 
@@ -49,6 +50,7 @@ Use `npm run build` to build the website and `npm run serve` to start a server
 .
 ├── src
 │   ├── components
+│   ├── hooks
 │   ├── images
 │   ├── pages
 │   ├── posts
@@ -64,6 +66,7 @@ file                | Description
 `gatsby-config.js`  | Gatsby configuration, see [docs](https://www.gatsbyjs.org/docs/gatsby-config/)
 `gatsby-node.js`    | See [docs](https://www.gatsbyjs.org/docs/node-apis/)
 `src/components`    | React components and their stylesheets are in this directory
+`src/hooks`         | React hooks, usually used for static GraphQL queries
 `src/images`        | self-describing
 `src/pages`         | Static pages
 `src/posts`         | Markdown files from which static pages are generated
