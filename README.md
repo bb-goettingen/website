@@ -10,8 +10,9 @@ If you want to make a post see the *Creating a Post* section below.
 ## TODO
 
 - [ ] Impressum/etc.
-- [ ] Translate README/etc. into German
+- [ ] Pinned posts
 - [ ] Create separate pages for Basisgruppen (dynamically)
+- [ ] Translate README/etc. into German
 - [ ] Issue template
 - [ ] PR template
 - [ ] License (?)
