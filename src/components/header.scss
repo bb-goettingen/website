@@ -1,12 +1,30 @@
 @import 'variables';
 
 .header {
-  background-color: $base-background;
+  position: relative;
   color: #f0f0f0;
-  height: 60px;
-  padding-left: 20px;
+  height: 160px;
+  overflow: hidden;
+}
+.header:before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-image: url("https://images.unsplash.com/photo-1488942446680-85dd7de440ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&h=500&q=80");
+  background-position: center center;
+  filter: blur(2px) sepia(100%) hue-rotate(220deg) brightness(80%) contrast(120%);
+}
+
+.header-content-wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: $main-max-width;
 }
 
 .header-heading {
-  line-height: 60px;
+  line-height: 80px;
+  text-shadow: 0 0 3px #000000;
 }
